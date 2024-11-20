@@ -15,7 +15,7 @@ const doSmthWithData = async (lat, lon) => {
                 };
             })
         };
-        console.log(newData);
+        // console.log(newData);
         return newData;
     } catch (error) {
         console.error('Error fetching data:', error);

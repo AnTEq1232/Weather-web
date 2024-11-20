@@ -12,7 +12,7 @@ const getCurrentWeather = async (cityName) => {
         }
         const data = await response.json();
 
-        console.log(data);
+        // console.log(data);
         return data; // Corrected line: Return the 'data' variable
     } catch (error) {
         console.error('Fetch error:', error);

@@ -1,6 +1,7 @@
 const API_KEY = "bb216b2195695e40ca7b0877851268d2";
 
 const getCityCoordinates = async (city) => {
+    // console.log(city);
     const response = await fetch(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`
     );
