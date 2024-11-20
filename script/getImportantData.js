@@ -1,4 +1,3 @@
-import { getCityCoordinates} from "./getCityCoordinates.js";
 import { getWeatherData } from "./getWeatherData.js";
 import { timestampToDate } from "./uniTimestampToDate.js";
 
