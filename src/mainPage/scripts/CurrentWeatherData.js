@@ -56,25 +56,41 @@ async function getCityCoordinates(
 	}
 }
 
-async function getCurrentWeatherData(lat,lon){
-    const getWeatherDataURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+async function getCurrentWeatherData(lat, lon) {
+    const getWeatherDataURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     try {
         const responseCurrentWeather = await fetch(getWeatherDataURL);
 
-        if(!responseCurrentWeather.ok)
-            throw new Error(`HTTP error~! status ${responseCurrentWeather.status}`);
+        if (!responseCurrentWeather.ok)
+            throw new Error(`HTTP error! status ${responseCurrentWeather.status}`);
 
         const dataCurrentWeather = await responseCurrentWeather.json();
+
         console.log("Pełna odpowiedź z API (dane pogodowe):", dataCurrentWeather);
 
-        if(dataCurrentWeather.length === 0){
+        if (!dataCurrentWeather.list || dataCurrentWeather.list.length === 0) {
             console.log("Brak wyników dla lokalizacji");
             return;
         }
 
-    }
-    catch (error) {
+        // Iteracja przez prognozy pogodowe
+        dataCurrentWeather.list.forEach((forecast) => {
+            const date = new Date(forecast.dt * 1000); // Konwersja UNIX timestamp na Date
+            const formattedTime = date.toLocaleTimeString("pl-PL", {
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+            const formattedDate = date.toLocaleDateString("pl-PL", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+            });
+
+            console.log(`Data: ${formattedDate}, Godzina: ${formattedTime}`);
+        });
+    } catch (error) {
         console.log("Błąd w pobieraniu danych pogodowych:", error);
     }
 }
+

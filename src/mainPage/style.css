@@ -1,1 +1,13 @@
+.navbar {
+    padding: 1rem 2rem; /* Adds some space around the navbar */
+}
+
+.navbar-brand img {
+    display: block;
+    margin: auto;
+}
+
+form.d-flex {
+    max-width: 300px; /* Limits the width of the search bar */
+}
 
