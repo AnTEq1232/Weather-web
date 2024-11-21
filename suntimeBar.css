@@ -17,7 +17,7 @@
 }
 .progressed-bar {
 	background-color: #bbbbbb;
-	width: 300px;
+	width: 500px;
 	height: 10px;
 	border-radius: 5px;
 }
@@ -31,11 +31,11 @@
 .progressed-bar .html #testuje {
 	padding: 5px;
 	border-radius: 50%;
-	background-color: white;
+	background-color: #212529;
 	float: right;
 	margin-top: -10px;
 	margin-right: -20px;
-	color: black;
+	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
