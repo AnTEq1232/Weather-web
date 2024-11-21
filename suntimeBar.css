@@ -1,0 +1,55 @@
+:root {
+	--sun-position: 0%;
+}
+
+.boxed {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.skills {
+	font-weight: 400;
+	letter-spacing: 1px;
+	margin-top: 40px;
+	margin-bottom: 5px;
+	color: #fff;
+}
+.progressed-bar {
+	background-color: #bbbbbb;
+	width: 300px;
+	height: 10px;
+	border-radius: 5px;
+}
+.progressed-bar .html {
+	margin-top: 20px;
+	height: 10px;
+	border-radius: 5px;
+	width: 0%;
+	background-color: blueviolet;
+}
+.progressed-bar .html #testuje {
+	padding: 5px;
+	border-radius: 50%;
+	background-color: white;
+	float: right;
+	margin-top: -10px;
+	margin-right: -20px;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.progressed-bar .html {
+	background: #81939c;
+	animation: html 1s ease-out forwards;
+}
+
+@keyframes html {
+	from {
+		width: 0px;
+	}
+	to {
+		width: var(--sun-position);
+	}
+}
