@@ -32,8 +32,8 @@ const setSun = async (cityName) => {
     }
 
     // Update the display with the new values
-    document.getElementById("sunrise").innerHTML = timestampToDate(sunrise);
-    document.getElementById("sunset").innerHTML = timestampToDate(sunset);
+    document.getElementById("sunrise").innerHTML = timestampToDate(data.sys.sunrise);
+    document.getElementById("sunset").innerHTML = timestampToDate(data.sys.sunset);
 };
 
 
