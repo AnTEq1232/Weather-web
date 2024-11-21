@@ -31,6 +31,9 @@ const getDailyWeather = async (cityName) => {
         document.getElementById(`tempday${i+1}`).innerHTML = `` + nowData[i].main.temp + "°C";
         const img = `<img src="../icons/${nowData[i].weather[0].icon}.png" alt="Weather Icon" style="max-width: 100px;" class="m-auto">`;
         document.getElementById(`imgadd${1+i}`).innerHTML = img;
+        document.getElementById(`Wday${i+1}`).innerHTML = d.getDate()+i+1 + `.` + d.getMonth() + "<br>";
+        document.getElementById(`Wday${i+1}`).innerHTML += `Prędkość ${nowData[i].wind.speed} m/s<br>`;
+        document.getElementById(`Wday${i+1}`).innerHTML += `Kierunek ${nowData[i].wind.deg}°`;
     }
 };
 
